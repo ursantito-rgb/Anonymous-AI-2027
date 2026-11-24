@@ -50,26 +50,11 @@ export const ToolsScreen: React.FC = () => {
         >
           <Icon name="arrow-left" size={20} color={colors.text} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Tools</Text>
+        <Text style={styles.headerTitle}>Herramientas</Text>
       </View>
 
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        {/* Pro Tools always sits on top of the listing. */}
-        <TouchableOpacity
-          style={styles.proToolsButton}
-          onPress={openProTools}
-          activeOpacity={0.75}
-          testID="tools-pro-tools"
-        >
-          <View style={styles.proToolsIcon}>
-            <IconMC name="crown" size={20} color={colors.primary} />
-          </View>
-          <View style={styles.toolInfo}>
-            <Text style={styles.toolName}>Pro Tools</Text>
-            <Text style={styles.toolDescription}>Email, calendar and MCP servers</Text>
-          </View>
-          <Icon name="chevron-right" size={18} color={colors.textMuted} />
-        </TouchableOpacity>
+        
 
         {showHint && (
           <View style={[styles.hintBanner, { backgroundColor: colors.surface }]}>
@@ -79,7 +64,7 @@ export const ToolsScreen: React.FC = () => {
                 Too many tools can confuse the model and increase latency on the first response. Stick to 2-3 tools for best results.
               </Text>
               <TouchableOpacity onPress={setToolCountHintDismissed} style={styles.hintDismiss}>
-                <Text style={styles.hintDismissText}>Got it</Text>
+                <Text style={styles.hintDismissText}>Entendido</Text>
               </TouchableOpacity>
             </View>
           </View>

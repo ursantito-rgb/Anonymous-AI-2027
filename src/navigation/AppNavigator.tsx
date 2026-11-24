@@ -143,7 +143,7 @@ const MainTabs: React.FC = () => {
         <Tab.Screen
           name="HomeTab"
           component={HomeScreen}
-          options={{ tabBarLabel: 'Home', tabBarButtonTestID: 'home-tab' }}
+          options={{ tabBarLabel: 'Inicio', tabBarButtonTestID: 'home-tab' }}
           listeners={() => ({
             tabPress: () => { triggerHaptic('selection'); },
           })}
@@ -159,7 +159,7 @@ const MainTabs: React.FC = () => {
         <Tab.Screen
           name="ProjectsTab"
           component={ProjectsScreen}
-          options={{ tabBarLabel: 'Projects', tabBarButtonTestID: 'projects-tab' }}
+          options={{ tabBarLabel: 'Proyectos', tabBarButtonTestID: 'projects-tab' }}
           listeners={() => ({
             tabPress: () => { triggerHaptic('selection'); },
           })}
@@ -167,7 +167,7 @@ const MainTabs: React.FC = () => {
         <Tab.Screen
           name="ModelsTab"
           component={ModelsScreen}
-          options={{ tabBarLabel: 'Models', tabBarButtonTestID: 'models-tab' }}
+          options={{ tabBarLabel: 'Modelos', tabBarButtonTestID: 'models-tab' }}
           listeners={() => ({
             tabPress: () => { triggerHaptic('selection'); },
           })}
@@ -175,7 +175,7 @@ const MainTabs: React.FC = () => {
         <Tab.Screen
           name="SettingsTab"
           component={SettingsScreen}
-          options={{ tabBarLabel: 'Settings', tabBarButtonTestID: 'settings-tab' }}
+          options={{ tabBarLabel: 'Ajustes', tabBarButtonTestID: 'settings-tab' }}
           listeners={() => ({
             tabPress: () => { triggerHaptic('selection'); },
           })}

@@ -1,4 +1,5 @@
 name: Anonymous AI 2027 APK
+# v1.0.1: free edition, no subscription promotions
 on:
   workflow_dispatch:
   push:

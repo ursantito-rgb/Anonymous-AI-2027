@@ -144,17 +144,17 @@ export const SettingsScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       <View style={styles.header}>
-        <Text style={styles.title}>Settings</Text>
+        <Text style={styles.title}>Ajustes</Text>
       </View>
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
 
         {/* PRO Banner */}
-        <ProUpsellBanner trigger={focusTrigger} onGetPro={() => navigation.navigate('ProDetail')} />
+
 
         {/* Theme Selector */}
         <AnimatedEntry index={0} staggerMs={40} trigger={focusTrigger}>
           <View style={styles.themeToggleRow}>
-            <Text style={styles.themeToggleLabel}>Appearance</Text>
+            <Text style={styles.themeToggleLabel}>Apariencia</Text>
             <View style={styles.themeSelector}>
               {([
                 { mode: 'system' as const, icon: 'monitor' },
@@ -184,12 +184,12 @@ export const SettingsScreen: React.FC = () => {
         <AttachStep index={5} fill>
           <View style={styles.navSection}>
             {[
-              { icon: 'sliders', title: 'Model Settings', desc: 'System prompt, generation, and performance', screen: 'ModelSettings' as const },
-              { icon: 'wifi', title: 'Remote Servers', desc: 'Connect to Ollama, LM Studio, and more', screen: 'RemoteServers' as const },
+              { icon: 'sliders', title: 'Ajustes del modelo', desc: 'Instrucciones, generación y rendimiento', screen: 'ModelSettings' as const },
+              { icon: 'wifi', title: 'Servidores remotos', desc: 'Conectar a Ollama, LM Studio y otros', screen: 'RemoteServers' as const },
             //  { icon: 'search', title: 'Web Search', desc: 'Configure search API key for reliable results', screen: 'WebSearchSettings' as const },
-              { icon: 'lock', title: 'Security', desc: 'Passphrase and app lock', screen: 'SecuritySettings' as const },
-              { icon: 'smartphone', title: 'Device Information', desc: 'Hardware and compatibility', screen: 'DeviceInfo' as const },
-              { icon: 'hard-drive', title: 'Storage', desc: 'Models and data usage', screen: 'StorageSettings' as const },
+              { icon: 'lock', title: 'Seguridad', desc: 'Contraseña y bloqueo de la aplicación', screen: 'SecuritySettings' as const },
+              { icon: 'smartphone', title: 'Información del dispositivo', desc: 'Hardware y compatibilidad', screen: 'DeviceInfo' as const },
+              { icon: 'hard-drive', title: 'Almacenamiento', desc: 'Modelos y uso de datos', screen: 'StorageSettings' as const },
             ].map((item, index, arr) => (
               <AnimatedListItem
                 key={item.screen}
@@ -212,29 +212,6 @@ export const SettingsScreen: React.FC = () => {
           </View>
         </AttachStep>
 
-        {/* PRO Button */}
-        <AnimatedEntry index={6} staggerMs={40} trigger={focusTrigger}>
-          <TouchableOpacity
-            style={styles.proNavButton}
-            onPress={() => navigation.navigate('ProDetail')}
-            activeOpacity={0.75}
-          >
-            <View style={styles.proIconContainer}>
-              <IconMC name="crown" size={18} color={colors.primary} />
-            </View>
-            <View style={styles.proCardText}>
-              <View style={styles.proTitleRow}>
-                <Text style={styles.proNavTitle}>Off Grid PRO</Text>
-                <View style={styles.proBadge}>
-                  <Text style={styles.proBadgeText}>PRO</Text>
-                </View>
-              </View>
-              <Text style={styles.proDesc}>{proStatusLabel}</Text>
-            </View>
-            <Icon name="chevron-right" size={16} color={colors.textMuted} />
-          </TouchableOpacity>
-        </AnimatedEntry>
-
         {/* Community */}
         <AnimatedEntry index={7} staggerMs={40} trigger={focusTrigger}>
           <View style={styles.navSection}>
@@ -243,8 +220,8 @@ export const SettingsScreen: React.FC = () => {
                 <Icon name="star" size={16} color={colors.textSecondary} />
               </View>
               <View style={styles.navItemContent}>
-                <Text style={styles.navItemTitle}>Star on GitHub</Text>
-                <Text style={styles.navItemDesc}>Support the open-source project</Text>
+                <Text style={styles.navItemTitle}>Apoyar en GitHub</Text>
+                <Text style={styles.navItemDesc}>Apoya el proyecto de código abierto</Text>
               </View>
               <Icon name="external-link" size={14} color={colors.textMuted} />
             </TouchableOpacity>
@@ -253,8 +230,8 @@ export const SettingsScreen: React.FC = () => {
                 <Icon name="mail" size={16} color={colors.textSecondary} />
               </View>
               <View style={styles.navItemContent}>
-                <Text style={styles.navItemTitle}>Send Feedback</Text>
-                <Text style={styles.navItemDesc}>Report a bug or share a suggestion</Text>
+                <Text style={styles.navItemTitle}>Enviar comentarios</Text>
+                <Text style={styles.navItemDesc}>Informar de un error o sugerencia</Text>
               </View>
               <Icon name="external-link" size={14} color={colors.textMuted} />
             </TouchableOpacity>
@@ -263,8 +240,8 @@ export const SettingsScreen: React.FC = () => {
                 <Icon name="share-2" size={16} color={colors.textSecondary} />
               </View>
               <View style={styles.navItemContent}>
-                <Text style={styles.navItemTitle}>Share on X</Text>
-                <Text style={styles.navItemDesc}>Tell others about Off Grid</Text>
+                <Text style={styles.navItemTitle}>Compartir en X</Text>
+                <Text style={styles.navItemDesc}>Compartir el proyecto original</Text>
               </View>
               <Icon name="external-link" size={14} color={colors.textMuted} />
             </TouchableOpacity>
@@ -279,8 +256,8 @@ export const SettingsScreen: React.FC = () => {
                 <Icon name="info" size={16} color={colors.textSecondary} />
               </View>
               <View style={styles.navItemContent}>
-                <Text style={styles.navItemTitle}>About</Text>
-                <Text style={styles.navItemDesc}>Version {packageJson.version}</Text>
+                <Text style={styles.navItemTitle}>Acerca de</Text>
+                <Text style={styles.navItemDesc}>Versión {packageJson.version}</Text>
               </View>
               <Icon name="chevron-right" size={16} color={colors.textMuted} />
             </TouchableOpacity>
@@ -293,7 +270,7 @@ export const SettingsScreen: React.FC = () => {
             <View style={styles.privacyIconContainer}>
               <Icon name="shield" size={18} color={colors.textSecondary} />
             </View>
-            <Text style={styles.privacyTitle}>Privacy First</Text>
+            <Text style={styles.privacyTitle}>Privacidad ante todo</Text>
             <Text style={styles.privacyText}>
               All your data stays on this device. No conversations, prompts, or
               personal information is ever sent to any server.

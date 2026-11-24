@@ -60,7 +60,7 @@ export const ModelsScreen: React.FC = () => {
       <View style={isShowingDetail ? collapsedStyle.hidden : undefined}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.title}>Models</Text>
+          <Text style={styles.title}>Modelos</Text>
           <AttachStep index={10}>
             <TouchableOpacity
               style={styles.downloadManagerButton}
@@ -84,7 +84,7 @@ export const ModelsScreen: React.FC = () => {
               <View style={styles.importProgressHeader}>
                 <Icon name="file" size={18} color={colors.primary} />
                 <Text style={styles.importProgressText} numberOfLines={1}>
-                  Importing {vm.importProgress.fileName}
+                  Importando {vm.importProgress.fileName}
                 </Text>
               </View>
               <View style={styles.imageProgressBar}>
@@ -97,7 +97,7 @@ export const ModelsScreen: React.FC = () => {
           ) : (
             <TouchableOpacity style={styles.importButton} onPress={vm.handleImportLocalModel} testID="import-local-model" disabled={vm.isImporting}>
               <Icon name="folder-plus" size={20} color={colors.primary} />
-              <Text style={styles.importButtonText}>Import Local File</Text>
+              <Text style={styles.importButtonText}>Importar archivo local</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -117,7 +117,7 @@ export const ModelsScreen: React.FC = () => {
               vm.setImageFiltersVisible(false);
             }}
           >
-            <Text style={[styles.tabText, vm.activeTab === 'text' && styles.tabTextActive]}>Text Models</Text>
+            <Text style={[styles.tabText, vm.activeTab === 'text' && styles.tabTextActive]}>Texto</Text>
             {vm.activeTab === 'text' && <View style={styles.tabIndicator} />}
           </TouchableOpacity>
           <AttachStep index={4}>
@@ -130,23 +130,11 @@ export const ModelsScreen: React.FC = () => {
                 vm.setImageFiltersVisible(false);
               }}
             >
-              <Text style={[styles.tabText, vm.activeTab === 'image' && styles.tabTextActive]}>Image Models</Text>
+              <Text style={[styles.tabText, vm.activeTab === 'image' && styles.tabTextActive]}>Imágenes</Text>
               {vm.activeTab === 'image' && <View style={styles.tabIndicator} />}
             </TouchableOpacity>
           </AttachStep>
-          <TouchableOpacity
-            style={styles.tabItem}
-            testID="voice-models-tab"
-            onPress={() => {
-              vm.setActiveTab('voice');
-              vm.setFilterState(initialFilterState);
-              vm.setTextFiltersVisible(false);
-              vm.setImageFiltersVisible(false);
-            }}
-          >
-            <Text style={[styles.tabText, vm.activeTab === 'voice' && styles.tabTextActive]}>Voice Models</Text>
-            {vm.activeTab === 'voice' && <View style={styles.tabIndicator} />}
-          </TouchableOpacity>
+          
           <TouchableOpacity
             style={styles.tabItem}
             testID="transcription-models-tab"
@@ -157,7 +145,7 @@ export const ModelsScreen: React.FC = () => {
               vm.setImageFiltersVisible(false);
             }}
           >
-            <Text style={[styles.tabText, vm.activeTab === 'transcription' && styles.tabTextActive]}>Transcription Models</Text>
+            <Text style={[styles.tabText, vm.activeTab === 'transcription' && styles.tabTextActive]}>Transcripción</Text>
             {vm.activeTab === 'transcription' && <View style={styles.tabIndicator} />}
           </TouchableOpacity>
         </ScrollView>

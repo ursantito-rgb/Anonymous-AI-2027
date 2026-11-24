@@ -65,12 +65,12 @@ export const ServerCard: React.FC<{
         )}
         {!isConnecting && isConnected && (
           <View style={[styles.connectedBadge, { backgroundColor: `${colors.success}20`, borderColor: colors.success }]} testID={`discovered-server-${server.id}-connected`}>
-            <Text style={[styles.connectButtonText, { color: colors.success }]}>Connected</Text>
+            <Text style={[styles.connectButtonText, { color: colors.success }]}>Conectado</Text>
           </View>
         )}
         {!isConnecting && !isConnected && (
           <TouchableOpacity style={[styles.connectButton, { borderColor: colors.primary }]} onPress={onConnect} testID={`discovered-server-${server.id}-connect`}>
-            <Text style={[styles.connectButtonText, { color: colors.primary }]}>Connect</Text>
+            <Text style={[styles.connectButtonText, { color: colors.primary }]}>Conectar</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -100,12 +100,12 @@ export const NetworkSection: React.FC<{
 
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>Network Models</Text>
+      <Text style={styles.sectionTitle}>Modelos de red</Text>
 
       {isCheckingNetwork && !hasServers && (
         <View style={styles.scanningRow}>
           <ActivityIndicator size="small" color={colors.textSecondary} />
-          <Text style={styles.scanningText}>Scanning your network...</Text>
+          <Text style={styles.scanningText}>Buscando en tu red...</Text>
         </View>
       )}
 
@@ -135,13 +135,13 @@ export const NetworkSection: React.FC<{
         >
           {busy
             ? <ActivityIndicator size="small" color={colors.primary} />
-            : <Text style={[styles.actionButtonText, { color: colors.primary }]}>Scan Network</Text>}
+            : <Text style={[styles.actionButtonText, { color: colors.primary }]}>Buscar en la red</Text>}
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.actionButton, { borderColor: colors.primary }]}
           onPress={onAddManually}
         >
-          <Text style={[styles.actionButtonText, { color: colors.primary }]}>Add Server</Text>
+          <Text style={[styles.actionButtonText, { color: colors.primary }]}>Añadir servidor</Text>
         </TouchableOpacity>
       </View>
     </View>

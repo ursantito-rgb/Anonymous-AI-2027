@@ -307,7 +307,7 @@ export const ModelDownloadScreen: React.FC<Props> = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View testID="model-download-loading" style={styles.loadingContainer}>
         <ActivityIndicator size="large" color={colors.primary} />
-        <Text style={styles.loadingText}>Analyzing your device...</Text>
+        <Text style={styles.loadingText}>Analizando tu dispositivo...</Text>
       </View>
     </SafeAreaView>
   );
@@ -317,9 +317,9 @@ export const ModelDownloadScreen: React.FC<Props> = ({ navigation }) => {
       <View testID="model-download-screen" style={styles.container}>
         <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
           <View style={styles.header}>
-            <Text style={styles.title}>Set Up Your AI</Text>
+            <Text style={styles.title}>Configura tu IA</Text>
             <Text style={styles.subtitle}>
-              Connect to a model server on your network, or download one to run directly on your device.
+              Conecta con un servidor de tu red o descarga un modelo para ejecutarlo en tu dispositivo.
             </Text>
           </View>
 
@@ -336,15 +336,15 @@ export const ModelDownloadScreen: React.FC<Props> = ({ navigation }) => {
             colors={colors}
           />
 
-          <Text style={styles.sectionTitle}>Download to Your Device</Text>
+          <Text style={styles.sectionTitle}>Descargar en tu dispositivo</Text>
 
           <Card style={styles.deviceCard}>
             <View style={styles.deviceInfo}>
-              <Text style={styles.deviceLabel}>Your Device</Text>
+              <Text style={styles.deviceLabel}>Tu dispositivo</Text>
               <Text style={styles.deviceValue}>{deviceInfo?.deviceModel}</Text>
             </View>
             <View style={styles.deviceInfo}>
-              <Text style={styles.deviceLabel}>Available Memory</Text>
+              <Text style={styles.deviceLabel}>Memoria disponible</Text>
               <Text style={styles.deviceValue}>{hardwareService.formatBytes(deviceInfo?.availableMemory || 0)}</Text>
             </View>
           </Card>
@@ -395,14 +395,14 @@ export const ModelDownloadScreen: React.FC<Props> = ({ navigation }) => {
 
           {recommendedModels.length === 0 && liteRTFiles.length === 0 && (
             <Card style={styles.warningCard}>
-              <Text style={styles.warningTitle}>Limited Compatibility</Text>
-              <Text style={styles.warningText}>Your device has limited memory. You can still browse and download smaller models from the model browser.</Text>
+              <Text style={styles.warningTitle}>Compatibilidad limitada</Text>
+              <Text style={styles.warningText}>Tu dispositivo tiene memoria limitada. Puedes descargar modelos más pequeños.</Text>
             </Card>
           )}
         </ScrollView>
 
         <View style={styles.footer}>
-          <Button title="Skip for Now" variant="ghost" onPress={() => navigation.replace('Main')} testID="model-download-skip" />
+          <Button title="Omitir por ahora" variant="ghost" onPress={() => navigation.replace('Main')} testID="model-download-skip" />
         </View>
 
         <CustomAlert visible={alertState.visible} title={alertState.title} message={alertState.message} buttons={alertState.buttons} onClose={() => setAlertState(hideAlert())} />

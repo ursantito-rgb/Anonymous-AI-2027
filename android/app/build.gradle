@@ -84,8 +84,8 @@ android {
         applicationId "com.anonymousai.app2027"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1782490719
-        versionName "0.0.100"
+        versionCode 1782490720
+        versionName "1.0.1"
     }
     signingConfigs {
         debug {

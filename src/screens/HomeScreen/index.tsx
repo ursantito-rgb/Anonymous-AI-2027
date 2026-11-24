@@ -131,12 +131,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
           <View style={styles.header}>
             <View style={styles.headerLeft}>
-              <Text style={styles.title}>Off Grid</Text>
+              <Text style={styles.title}>Anonymous AI 2027</Text>
               {showIcon && <PulsatingIcon onPress={openSheet} />}
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('ProDetail')} hitSlop={8} style={styles.crownButton}>
-              <IconMC name="crown" size={16} color={colors.primary} />
-            </TouchableOpacity>
+            
           </View>
 
           {/* Collapsed Models summary — tap to open the manager sheet. Both the
@@ -157,7 +155,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           {
             (activeTextModel || activeImageModelId) ? (
               <Button
-                title="New Chat"
+                title="Nuevo chat"
                 onPress={startNewChat}
                 style={styles.newChatButton}
                 testID="new-chat-button"
@@ -171,14 +169,14 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                 </Text>
                 <View style={styles.setupActions}>
                   <Button
-                    title="Add Remote Server"
+                    title="Añadir servidor remoto"
                     variant="outline"
                     size="small"
                     onPress={() => navigation.navigate('RemoteServers')}
                     testID="add-server-button"
                   />
                   <Button
-                    title={downloadedModels.length > 0 || remoteTextModels.length > 0 ? 'Select Model' : 'Browse Models'}
+                    title={downloadedModels.length > 0 || remoteTextModels.length > 0 ? 'Seleccionar modelo' : 'Explorar modelos'}
                     variant="outline"
                     size="small"
                     onPress={() => downloadedModels.length > 0 || remoteTextModels.length > 0 ? setPickerType('text') : navigation.navigate('ModelsTab', { initialTab: 'text' })}
@@ -212,7 +210,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           >
             <Icon name="grid" size={18} color={colors.primary} />
             <View style={styles.galleryCardInfo}>
-              <Text style={styles.galleryCardTitle}>Image Gallery</Text>
+              <Text style={styles.galleryCardTitle}>Galería de imágenes</Text>
               <Text style={styles.galleryCardMeta}>
                 {generatedImages.length} {generatedImages.length === 1 ? 'image' : 'images'}
               </Text>
@@ -225,12 +223,12 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             <View style={styles.statsRow}>
               <View style={styles.statItem}>
                 <Text style={styles.statValue}>{downloadedModels.length}</Text>
-                <Text style={styles.statLabel}>Text models</Text>
+                <Text style={styles.statLabel}>Modelos de texto</Text>
               </View>
               <View style={styles.statDivider} />
               <View style={styles.statItem}>
                 <Text style={styles.statValue}>{downloadedImageModels.length}</Text>
-                <Text style={styles.statLabel}>Image models</Text>
+                <Text style={styles.statLabel}>Modelos de imágenes</Text>
               </View>
               <View style={styles.statDivider} />
               <View style={styles.statItem}>

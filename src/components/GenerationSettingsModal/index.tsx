@@ -73,11 +73,11 @@ export const GenerationSettingsModal: React.FC<GenerationSettingsModalProps> = (
       visible={visible}
       onClose={onClose}
       snapPoints={['50%', '90%']}
-      title="Chat Settings"
+      title="Ajustes del chat"
     >
       {performanceStats.lastTokensPerSecond > 0 && (
         <View style={styles.statsBar}>
-          <Text style={styles.statsLabel}>Last Generation:</Text>
+          <Text style={styles.statsLabel}>Última generación:</Text>
           <Text style={styles.statsValue}>
             {performanceStats.lastTokensPerSecond.toFixed(1)} tok/s
           </Text>
@@ -115,7 +115,7 @@ export const GenerationSettingsModal: React.FC<GenerationSettingsModalProps> = (
           onPress={() => setImageSettingsOpen(!imageSettingsOpen)}
           activeOpacity={0.7}
         >
-          <Text style={styles.accordionTitle}>IMAGE GENERATION</Text>
+          <Text style={styles.accordionTitle}>GENERACIÓN DE IMÁGENES</Text>
           <Icon
             name={imageSettingsOpen ? 'chevron-up' : 'chevron-down'}
             size={16}
@@ -130,7 +130,7 @@ export const GenerationSettingsModal: React.FC<GenerationSettingsModalProps> = (
           onPress={() => setTextSettingsOpen(!textSettingsOpen)}
           activeOpacity={0.7}
         >
-          <Text style={styles.accordionTitle}>TEXT GENERATION</Text>
+          <Text style={styles.accordionTitle}>GENERACIÓN DE TEXTO</Text>
           <Icon
             name={textSettingsOpen ? 'chevron-up' : 'chevron-down'}
             size={16}
@@ -173,7 +173,7 @@ export const GenerationSettingsModal: React.FC<GenerationSettingsModalProps> = (
         )}
 
         <TouchableOpacity style={styles.resetButton} onPress={handleResetDefaults}>
-          <Text style={styles.resetButtonText}>Reset to Defaults</Text>
+          <Text style={styles.resetButtonText}>Restablecer valores</Text>
         </TouchableOpacity>
 
         <View style={styles.bottomPadding} />

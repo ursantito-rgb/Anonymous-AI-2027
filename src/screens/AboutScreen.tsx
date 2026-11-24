@@ -26,7 +26,7 @@ export const AboutScreen: React.FC = () => {
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Icon name="arrow-left" size={20} color={colors.text} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>About</Text>
+        <Text style={styles.headerTitle}>Acerca de</Text>
         <View style={styles.backButton} />
       </View>
 
@@ -34,10 +34,10 @@ export const AboutScreen: React.FC = () => {
         {/* App identity */}
         <View style={styles.heroSection}>
           <Image source={require('../assets/logo.png')} style={staticStyles.appIcon} />
-          <Text style={styles.appName}>Off Grid</Text>
-          <Text style={styles.version}>Version {packageJson.version}</Text>
+          <Text style={styles.appName}>Anonymous AI 2027</Text>
+          <Text style={styles.version}>Versión {packageJson.version}</Text>
           <Text style={styles.description}>
-            Local AI that runs entirely on your phone. No cloud, no telemetry, nothing leaves the device.
+            IA local para tu teléfono, basada en Off Grid AI de código abierto.
           </Text>
         </View>
 
@@ -54,8 +54,8 @@ export const AboutScreen: React.FC = () => {
               <Icon name="github" size={16} color={colors.textSecondary} />
             </View>
             <View style={styles.navItemContent}>
-              <Text style={styles.navItemTitle}>Open Source</Text>
-              <Text style={styles.navItemDesc}>View the source on GitHub</Text>
+              <Text style={styles.navItemTitle}>Código abierto</Text>
+              <Text style={styles.navItemDesc}>Ver código original en GitHub</Text>
             </View>
             <Icon name="external-link" size={14} color={colors.textMuted} />
           </AnimatedListItem>
